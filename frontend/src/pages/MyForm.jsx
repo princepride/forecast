@@ -11,6 +11,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import Axios from 'axios';
 import { useStateContext } from '../context/ContextProvider'
+import { host } from '../config.js'
 
 const MyForm = () => {
     //const [value, setValue] = useState(
@@ -32,7 +33,7 @@ const MyForm = () => {
         const doLocationID = Number(document.querySelector("#doLocationID").value)
         const averageSpeedInHour = Number(document.querySelector("#averageSpeedInHour").value)
         const ridesInHour = Number(document.querySelector("#ridesInHour").value)
-        Axios.post('',{
+        Axios.post(host+'forecast',{
             passengerCount:passengerCount,
             tripDistance:tripDistance,
             ratecodeID:ratecodeID,
